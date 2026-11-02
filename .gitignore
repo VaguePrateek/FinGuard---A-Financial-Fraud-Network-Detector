@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+backend/ledger.db
+backend/test_ledger.db
+backend/*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

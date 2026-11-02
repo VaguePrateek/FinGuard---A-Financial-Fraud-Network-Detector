@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-ink text-zinc-200 antialiased;
+    background-image:
+      radial-gradient(65rem 42rem at 108% -12%, rgba(16, 185, 129, 0.13), transparent 62%),
+      radial-gradient(55rem 38rem at -12% 112%, rgba(6, 78, 59, 0.3), transparent 62%),
+      linear-gradient(180deg, #020604 0%, #030a06 55%, #020604 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-emerald-400/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-emerald-900/80;
+    border: 2px solid #020604;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-700;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-emerald-400/[0.10] bg-[#06110b]/80 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.95)] backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply transition duration-200 hover:border-emerald-400/[0.22] hover:bg-[#08170e]/90;
+  }
+
+  .label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-emerald-400/15 bg-black/50 px-3.5 py-2.5 text-sm text-zinc-200 outline-none transition placeholder:text-zinc-600 focus:border-emerald-400/50 focus:ring-2 focus:ring-emerald-400/10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-ink disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-emerald-400 text-black shadow-glow hover:bg-emerald-300 focus:ring-emerald-400;
+  }
+
+  .btn-ghost {
+    @apply btn border border-emerald-400/10 bg-emerald-400/[0.03] text-zinc-300 hover:border-emerald-400/25 hover:bg-emerald-400/[0.07] focus:ring-emerald-500;
+  }
+
+  .btn-danger {
+    @apply btn bg-rose-500 text-white hover:bg-rose-400 focus:ring-rose-500;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold;
+  }
+
+  .table-head {
+    @apply sticky top-0 z-10 bg-[#03100a]/95 text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500 backdrop-blur;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-300 via-teal-300 to-lime-300 bg-clip-text text-transparent;
+  }
+
+  .ring-glow {
+    box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.3), 0 0 34px -6px rgba(52, 211, 153, 0.5);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
